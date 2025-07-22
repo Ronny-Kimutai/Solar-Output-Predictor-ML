@@ -6,6 +6,7 @@ import joblib  # or pickle, depending on how you saved the model
 # Load the trained model
 model = joblib.load("solar_model.pkl")
 
+# Streamlit app title and description
 st.title("🔆 Solar Power Predictor")
 st.write("Enter forecasted values below to predict DC Power output")
 
@@ -29,7 +30,8 @@ input_df = pd.DataFrame({
     "Hour": [Hour]
 })
 
+# Displaying the Prediction
 if st.button("Predict"):
-    prediction = model.predict(input_df)[0]
+    prediction = model.predict(input_df)[0] # Predicting DC power in watts
     prediction_kw = prediction / 1000  # Convert to kilowatts
     st.success(f"⚡ Predicted DC Power Output: {prediction_kw:.2f} kW")
