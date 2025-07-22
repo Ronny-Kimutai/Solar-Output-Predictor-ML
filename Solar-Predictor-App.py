@@ -1,0 +1,35 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+import joblib  # or pickle, depending on how you saved the model
+
+# Load the trained model
+model = joblib.load("solar_model.pkl")
+
+st.title("🔆 Solar Power Predictor")
+st.write("Enter forecasted values below to predict DC Power output")
+
+# Input fields
+ambient = st.slider("Ambient Temperature (°C)", 10, 50, 25)
+irradiation = st.slider("Irradiance (W/m²)", 0, 1200, 500)
+Hour = st.slider("Hour of Day (From 6AM to 6PM)", 6, 18, 12)
+
+# Derived inputs
+module_temp = ambient + 5
+roll_avg_irr = irradiation
+roll_avg_power = irradiation
+
+# Prediction
+input_df = pd.DataFrame({
+    "AMBIENT_TEMPERATURE": [ambient],
+    "MODULE_TEMPERATURE": [module_temp],
+    "IRRADIATION": [irradiation],
+    "dc_power_roll_avg": [roll_avg_power],
+    "irradiation_roll_avg": [roll_avg_irr],
+    "Hour": [Hour]
+})
+
+if st.button("Predict"):
+    prediction = model.predict(input_df)[0]
+    prediction_kw = prediction / 1000  # Convert to kilowatts
+    st.success(f"⚡ Predicted DC Power Output: {prediction_kw:.2f} kW")
