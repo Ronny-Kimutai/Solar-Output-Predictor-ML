@@ -76,6 +76,24 @@ Solar-Output-Predictor-ML/
 
 ---
 
+## 📷 Sample Visualizations
+
+Below are some key visualizations and screenshots from the project:
+
+### Model Performance
+![Model Performance](Images/Model%20Performance.png)
+
+### Predicted vs Actual Solar Output
+![Predicted vs Actual](Images/Predicted%20vs%20Actual.png)
+
+### Prediction Based on Weather Forecast
+![Predicted based on Forecast](Images/Predicted%20based%20on%20Forecast.png)
+
+### Streamlit App Interface
+![Streamlit App](Images/Streamlit.png)
+
+---
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to open an issue or submit a pull request.
