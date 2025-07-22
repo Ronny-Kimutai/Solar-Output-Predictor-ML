@@ -100,6 +100,14 @@ Contributions, issues, and feature requests are welcome! Feel free to open an is
 
 ---
 
+## 🔭 Future Work & Integration Possibilities
+
+This project can be extended by incorporating Embedded Systems and IoT technologies to collect real-time data from weather sensors and solar panels. These devices can feed live data into the model for more accurate and responsive predictions.
+
+Furthermore, Control Engineering principles can be integrated to create intelligent decision-making systems. For instance, if the model forecasts low solar output, the system could automatically trigger early battery pre-charging or load management routines to ensure uninterrupted power availability.
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License.
