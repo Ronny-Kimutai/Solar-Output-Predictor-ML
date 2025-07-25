@@ -28,7 +28,7 @@ input_df = pd.DataFrame({
     "AMBIENT_TEMPERATURE": [ambient],
     "MODULE_TEMPERATURE": [module_temp],
     "IRRADIATION": [irradiation_kW],
-    "dc_power_roll_avg": [roll_avg_power],
+    "dc_power_roll_avg": roll_avg_power,
     "irradiation_roll_avg": [roll_avg_irr],
     "Hour": [Hour]
 })
