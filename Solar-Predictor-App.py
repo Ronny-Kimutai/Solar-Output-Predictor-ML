@@ -19,7 +19,7 @@ Hour = st.slider("Hour of Day (From 6AM to 6PM)", 6, 18, 12)
 irradiation_kW = irradiation / 1000  
 
 # Derived inputs
-module_temp = ambient + 5
+module_temp = ambient + 10
 roll_avg_irr = irradiation_kW
 roll_avg_power = irradiation_kW
 
