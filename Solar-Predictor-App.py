@@ -29,7 +29,7 @@ input_df = pd.DataFrame({
     "MODULE_TEMPERATURE": 24,
     "IRRADIATION": [irradiation_kW],
     "dc_power_roll_avg": roll_avg_power,
-    "irradiation_roll_avg": [roll_avg_irr],
+    "irradiation_roll_avg": 0.287,
     "Hour": [Hour]
 })
 
