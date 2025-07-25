@@ -15,16 +15,19 @@ ambient = st.slider("Ambient Temperature (°C)", 10, 50, 25)
 irradiation = st.slider("Irradiance (W/m²)", 0, 1200, 500)
 Hour = st.slider("Hour of Day (From 6AM to 6PM)", 6, 18, 12)
 
+# Convert W/m² to kW/m² (because model was trained in kW/m²)
+irradiation_kW = irradiation / 1000  
+
 # Derived inputs
 module_temp = ambient + 5
-roll_avg_irr = irradiation
-roll_avg_power = irradiation
+roll_avg_irr = irradiation_kW
+roll_avg_power = irradiation_kW
 
 # Prediction
 input_df = pd.DataFrame({
     "AMBIENT_TEMPERATURE": [ambient],
     "MODULE_TEMPERATURE": [module_temp],
-    "IRRADIATION": [irradiation],
+    "IRRADIATION": [irradiation_kW],
     "dc_power_roll_avg": [roll_avg_power],
     "irradiation_roll_avg": [roll_avg_irr],
     "Hour": [Hour]
