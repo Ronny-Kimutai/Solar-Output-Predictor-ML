@@ -19,9 +19,9 @@ Hour = st.slider("Hour of Day (From 6AM to 6PM)", 6, 18, 12)
 irradiation_kW = irradiation / 1000  
 
 # Derived inputs
-module_temp = ambient + 10
-roll_avg_irr = irradiation_kW
-roll_avg_power = irradiation_kW
+module_temp = ambient + 15 # Assuming module temperature is ambient + 15°C
+roll_avg_irr = irradiation_kW # Assuming roll average of irradiation is the same as current irradiation
+roll_avg_power = irradiation_kW # Placeholder for roll average of DC power, assuming it's the same as current irradiation
 
 # Prediction
 input_df = pd.DataFrame({
