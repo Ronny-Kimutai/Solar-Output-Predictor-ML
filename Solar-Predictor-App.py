@@ -21,7 +21,7 @@ irradiation_kW = irradiation / 1000
 # Derived inputs
 module_temp = ambient + 15 # Assuming module temperature is ambient + 15°C
 roll_avg_irr = irradiation_kW # Assuming roll average of irradiation is the same as current irradiation
-roll_avg_power = irradiation_kW # Placeholder for roll average of DC power, assuming it's the same as current irradiation
+roll_avg_power = 68712, # Average of dc power rolling average from the training data
 
 # Prediction
 input_df = pd.DataFrame({
